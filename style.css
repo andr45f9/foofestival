@@ -1,0 +1,92 @@
+/* Genrel settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  scroll-behavior: smooth;
+}
+/* -------------------------------- */
+
+/*---- Color palette ----*/
+:root {
+  --white: #ffffff;
+  --purple: #7023bf;
+  --black: #000000;
+  --black-light: #1b1b1b;
+  --black-lighter: #1d1d1d;
+}
+/* -------------------------------- */
+
+/*---- Fonts ----*/
+a {
+  font-family: "Bebas Neue", cursive;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+/* -------------------------------- */
+
+/*---- Navigation ----*/
+header {
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+li {
+  background-color: var(--purple);
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+}
+
+.nav_logo {
+  width: 18%;
+}
+
+/* -------------------------------- */
+
+/*---- Media Queries ----*/
+@media screen and (min-width: 768px) {
+  /* Navigation */
+  nav {
+    padding: 2rem;
+  }
+
+  .nav_logo {
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* Fonts */
+  a {
+    font-size: 1.4rem;
+  }
+
+  /* Navigation */
+  .nav_logo {
+    width: 6%;
+  }
+
+  li {
+    padding: 0.5rem 1.5rem;
+  }
+}
+/* -------------------------------- */
