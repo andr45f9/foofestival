@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: var(--black);
+  /*   background-color: var(--black); */
   scroll-behavior: smooth;
 }
 /* -------------------------------- */
@@ -14,6 +14,7 @@ body {
 /*---- Color palette ----*/
 :root {
   --white: #ffffff;
+  --transparent: #ffffff00;
   --purple: #7023bf;
   --black: #000000;
   --black-light: #1b1b1b;
@@ -22,6 +23,31 @@ body {
 /* -------------------------------- */
 
 /*---- Fonts ----*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bebas Neue", cursive;
+  color: var(--white);
+}
+
+.letter_banner h1,
+.letter_banner h2 {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.rap_letter {
+  color: var(--transparent);
+  -webkit-text-stroke: 1px var(--purple);
+}
+
+.festival_letter {
+  color: var(--transparent);
+  -webkit-text-stroke: 1px var(--white);
+}
+
 a {
   font-family: "Bebas Neue", cursive;
   text-decoration: none;
@@ -62,6 +88,36 @@ li {
 
 /* -------------------------------- */
 
+/*---- Frontpage ----*/
+#frontpage {
+  background-image: url(./img/background.png);
+  width: 100%;
+  height: 100vh;
+  background-position: 83% 0%;
+}
+
+.frontpage_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80vh;
+  padding-top: 6rem;
+}
+
+.frontpage_logo {
+  width: 40%;
+}
+
+.letter_banner {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+/* -------------------------------- */
+
 /*---- Media Queries ----*/
 @media screen and (min-width: 768px) {
   /* Navigation */
@@ -72,10 +128,33 @@ li {
   .nav_logo {
     width: 10%;
   }
+
+  /* Frontpage */
+  #frontpage {
+    background-position: 94% 0%;
+  }
+
+  .frontpage_logo {
+    width: 30%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   /* Fonts */
+  .letter_banner h1,
+  .letter_banner h2 {
+    font-size: 3rem;
+    margin-right: 2.4rem;
+  }
+
+  .rap_letter {
+    -webkit-text-stroke: 1.2px var(--purple);
+  }
+
+  .festival_letter {
+    -webkit-text-stroke: 1.2px var(--white);
+  }
+
   a {
     font-size: 1.4rem;
   }
@@ -87,6 +166,19 @@ li {
 
   li {
     padding: 0.5rem 1.5rem;
+  }
+
+  /* Frontpage */
+  #frontpage {
+    background-position: 50% 0%;
+  }
+
+  .frontpage_logo {
+    width: 15%;
+  }
+
+  .frontpage_wrapper {
+    padding-top: 0rem;
   }
 }
 /* -------------------------------- */
