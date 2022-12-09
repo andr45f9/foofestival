@@ -26,8 +26,8 @@
             <img src="./img/logo_white.svg" alt="FooFest logo white version" />
           </div>
           <ul>
-            <li><a href="#">Artists &#8594;</a></li>
-            <li><a href="#">Tickets &#8594;</a></li>
+            <li><a href="#booking">Artists &#8594;</a></li>
+            <li><a href="#artists">Tickets &#8594;</a></li>
           </ul>
         </nav>
         <div class="frontpage_wrapper">
@@ -48,7 +48,20 @@
       </section>
 
       <section id="artists">
-        <h2>Artists 2023</h2>
+        <h2>Artists <span class="white_outline">2023</span></h2>
+        <section id="all_artists"></section>
+        <template>
+          <article>
+            <div class="artist_img">
+              <img src="./img/artist.webp" alt="Picture of an artist" />
+            </div>
+            <div class="artist_txt">
+              <h3 class="white_outline"></h3>
+              <h4></h4>
+              <button>Read More &#8594;</button>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
     <footer></footer>
