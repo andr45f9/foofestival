@@ -16,6 +16,7 @@ body {
   --white: #ffffff;
   --transparent: #ffffff00;
   --purple: #7023bf;
+  --purple-hover: #5a169d;
   --black: #000000;
   --black-light: #1b1b1b;
   --black-lighter: #1d1d1d;
@@ -72,7 +73,7 @@ a {
 
 #artists button {
   font-family: "Bebas Neue", cursive;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--white);
 }
 
@@ -99,6 +100,10 @@ li {
   background-color: var(--purple);
   padding: 0.5rem 1rem;
   margin-left: 2rem;
+}
+
+li:hover {
+  background-color: var(--purple-hover);
 }
 
 .nav_logo {
@@ -177,6 +182,11 @@ article {
   border: 2px solid var(--purple);
   background-color: var(--transparent);
   padding: 0.5rem 1rem;
+}
+
+#artists button:hover {
+  border: 2px solid var(--purple-hover);
+  background-color: var(--purple-hover);
 }
 
 /* -------------------------------- */
@@ -321,6 +331,10 @@ article {
   .artist_img img {
     width: 25vw;
     max-width: 250px;
+  }
+
+  #artists button {
+    padding: 0.3rem 1.2rem;
   }
 }
 /* -------------------------------- */
