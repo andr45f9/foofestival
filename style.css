@@ -18,8 +18,9 @@ body {
   --purple: #7023bf;
   --purple-hover: #5a169d;
   --black: #000000;
-  --black-light: #1b1b1b;
-  --black-lighter: #1d1d1d;
+  --black-light: #131313;
+  --black-lighter: #1b1b1b;
+  --black-lightest: #1d1d1d;
 }
 /* -------------------------------- */
 
@@ -28,7 +29,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: "Bebas Neue", cursive;
   color: var(--white);
 }
@@ -75,6 +77,10 @@ a {
   font-family: "Bebas Neue", cursive;
   font-size: 1.1rem;
   color: var(--white);
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 /* -------------------------------- */
@@ -191,6 +197,32 @@ article {
 
 /* -------------------------------- */
 
+/*---- Footer ----*/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer_logo {
+  width: 30%;
+  margin-bottom: 2rem;
+}
+
+.company_info {
+  margin-bottom: 2rem;
+}
+
+.company_socials svg {
+  margin: 0.5rem;
+}
+
+/* -------------------------------- */
+
 /*---- Media Queries ----*/
 @media screen and (min-width: 768px) {
   /* Fonts */
@@ -234,6 +266,17 @@ article {
   article {
     margin-bottom: 0;
   }
+
+  /* Footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer_logo {
+    width: 15%;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -275,6 +318,10 @@ article {
     font-size: 1.4rem;
   }
 
+  h6 {
+    font-size: 1.2rem;
+  }
+
   /* Navigation */
   .nav_logo {
     width: 6%;
@@ -303,12 +350,12 @@ article {
 
   /* Booking */
   #booking {
-    padding: 4rem 4rem;
+    padding: 4rem;
   }
 
   /* Artists */
   #artists {
-    padding: 4rem 4rem;
+    padding: 4rem;
   }
 
   #all_artists {
@@ -335,6 +382,15 @@ article {
 
   #artists button {
     padding: 0.3rem 1.2rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 4rem;
+  }
+
+  .footer_logo {
+    width: 10%;
   }
 }
 /* -------------------------------- */
