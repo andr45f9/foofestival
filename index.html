@@ -26,8 +26,8 @@
             <img src="./img/logo_white.svg" alt="FooFest logo white version" />
           </div>
           <ul>
-            <li><a href="#booking">Artists &#8594;</a></li>
-            <li><a href="#artists">Tickets &#8594;</a></li>
+            <li><a href="#artists">Artists &#8594;</a></li>
+            <li><a href="#booking">Tickets &#8594;</a></li>
           </ul>
         </nav>
         <div class="frontpage_wrapper">
@@ -45,6 +45,112 @@
     <main>
       <section id="booking">
         <h2>Get your ticket</h2>
+        <form id="formflow_1">
+          <div class="dropdown">
+            <h3>1. Choose camping area</h3>
+            <select class="area_dropdown" required>
+              <option name="area" id="area" value="" disabled selected>Choose camping area</option>
+              <option name="area" id="area" value="svartheim">Svartheim</option>
+              <option name="area" id="area" value="nilfheim">Nilfheim</option>
+              <option name="area" id="area" value="helheim">Helheim</option>
+              <option name="area" id="area" value="muspelheim">Muspelheim</option>
+              <option name="area" id="area" value="alfheim">Alfheim</option>
+            </select>
+            <div class="spots_left_wrapper">
+              <p class="spots_left">45 spots left</p>
+            </div>
+          </div>
+          <div class="number_input">
+            <h3>2. Choose amount of people</h3>
+            <input type="number" name="people-spots" id="people-spots" min="0" required />
+            <div class="button_wrapper">
+              <button class="button_outline" id="reserve">Reserve spots</button>
+            </div>
+          </div>
+        </form>
+
+        <div id="timer">
+          <div class="circle">
+            <h5>Timer</h5>
+            <p>05:00</p>
+          </div>
+        </div>
+
+        <form id="formflow_2">
+          <h3>3. Choose Ticket type</h3>
+          <div class="ticket_type">
+            <div class="col">
+              <h4>Regular Ticket</h4>
+              <h5>799,-</h5>
+              <input type="number" name="ticket-number" id="reg-ticket" min="0" />
+            </div>
+
+            <div class="col">
+              <h4>VIP Ticket</h4>
+              <h5>1299,-</h5>
+              <input type="number" name="ticket-number" id="vip-ticket" min="0" />
+            </div>
+          </div>
+
+          <h3>4. Choose optionals</h3>
+          <div class="optionals">
+            <div class="col">
+              <h4>Green Camping</h4>
+              <p>Tent not included</p>
+              <h5>249,-</h5>
+              <input type="number" name="ticket-number" id="green-camp" min="0" />
+            </div>
+
+            <div class="col">
+              <h4>2-Person Tent</h4>
+              <p>Tent included</p>
+              <h5>299,-</h5>
+              <input type="number" name="ticket-number" id="2p-camp" min="0" />
+            </div>
+
+            <div class="col">
+              <h4>3-Person Tent</h4>
+              <p>Tent included</p>
+              <h5>399,-</h5>
+              <input type="number" name="ticket-number" id="3p-camp" min="0" />
+            </div>
+          </div>
+          <div class="button_wrapper">
+            <button class="button_outline" id="next">Next Step</button>
+          </div>
+        </form>
+
+        <form id="formflow_3">
+          <div class="col total">
+            <h3>TOTAL</h3>
+            <h5 class="price_amount">1996,-</h5>
+          </div>
+          <h3>5. Fill in personal information</h3>
+          <div class="col">
+            <div class="your_ticket">
+              <h4>Your ticket</h4>
+              <label for="name">NAME</label>
+              <input type="text" name="name" id="name" value="name" placeholder="Type in first name" />
+              <br />
+              <label for="mail">MAIL</label>
+              <input type="text" name="mail" id="mail" value="mail" placeholder="Type in E-mail" />
+            </div>
+            <div class="guest_ticket">
+              <h4>Guest ticket</h4>
+              <label for="name">NAME</label>
+              <input type="text" name="name" id="name" value="name" placeholder="Type in first name" />
+              <br />
+              <label for="mail">MAIL</label>
+              <input type="text" name="mail" id="mail" value="mail" placeholder="Type in E-mail" />
+            </div>
+          </div>
+
+          <div class="button_wrapper">
+            <button class="button_outline" id="checkout">Check Out</button>
+          </div>
+        </form>
+
+        <form id="formflow_4"></form>
       </section>
 
       <section id="artists">

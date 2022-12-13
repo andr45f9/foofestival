@@ -14,13 +14,13 @@ body {
 /*---- Color palette ----*/
 :root {
   --white: #ffffff;
+  --white-faded: #ffffffcd;
   --transparent: #ffffff00;
   --purple: #7023bf;
   --purple-hover: #5a169d;
   --black: #000000;
   --black-light: #131313;
   --black-lighter: #1b1b1b;
-  --black-lightest: #1d1d1d;
 }
 /* -------------------------------- */
 
@@ -33,6 +33,22 @@ h5,
 h6 {
   font-family: "Bebas Neue", cursive;
   color: var(--white);
+}
+
+p,
+label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  color: var(--white-faded);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-weight: 400;
+}
+
+label {
+  font-weight: 500;
 }
 
 a {
@@ -63,6 +79,48 @@ a {
   text-align: center;
 }
 
+#booking h2 {
+  margin-bottom: 2rem;
+}
+
+#booking h3 {
+  font-size: 1.5rem;
+}
+
+#formflow_1 h3,
+#formflow_2 h3 {
+  margin-bottom: 0.5rem;
+}
+
+#formflow_3 h3:nth-child(2) {
+  margin-bottom: 0.5rem;
+}
+
+#booking h4 {
+  color: var(--purple);
+}
+
+#booking h4,
+#booking h5 {
+  font-size: 1.3rem;
+}
+
+#booking h4,
+#formflow_1 h5,
+#formflow_2 h5 {
+  margin-bottom: 0.7rem;
+}
+
+.area_dropdown,
+#people-spots,
+[name="ticket-number"] {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--white);
+  text-align: center;
+}
+
 #artists h3 {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
@@ -73,10 +131,10 @@ a {
   margin-bottom: 2rem;
 }
 
-#artists button {
+#artists button,
+.button_outline {
   font-family: "Bebas Neue", cursive;
   font-size: 1.1rem;
-  color: var(--white);
 }
 
 h6 {
@@ -91,9 +149,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 99;
 }
 
 ul {
@@ -149,6 +204,145 @@ li:hover {
 /*---- Booking ----*/
 #booking {
   padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.button_outline {
+  border: 2px solid var(--purple);
+  background-color: var(--transparent);
+  padding: 0.5rem 2rem;
+  color: var(--white);
+}
+
+.button_outline:hover {
+  border: 2px solid var(--purple-hover);
+  background-color: var(--purple-hover);
+}
+
+/* Timer */
+#timer {
+  position: fixed;
+  bottom: 350px;
+  left: 0px;
+  z-index: 99;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple-hover);
+  width: 8vh;
+  min-width: 8%;
+  height: 8vh;
+  min-height: 8%;
+  border-radius: 0 50% 50% 0;
+  padding: 1rem;
+}
+
+.circle p {
+  margin-bottom: 0;
+}
+
+/* Form flow 1 */
+#formflow_1,
+#formflow_1 h2 {
+  margin-bottom: 4rem;
+}
+
+.area_dropdown,
+#people-spots {
+  border-radius: 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  height: 3.5vh;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.spots_left {
+  background-color: var(--purple-hover);
+  margin-bottom: 2rem;
+}
+
+/* Form flow 2 */
+.col {
+  background-color: var(--black-light);
+  margin-bottom: 1.3rem;
+  padding: 1rem 2rem;
+}
+
+.ticket_type {
+  margin-bottom: 3rem;
+}
+
+[name="ticket-number"] {
+  border-radius: 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  height: 3vh;
+  width: 40%;
+  cursor: pointer;
+}
+
+.optionals button {
+  margin-top: 2rem;
+}
+
+/* Form flow 3 */
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.total h3,
+.total h5 {
+  margin-bottom: 0rem;
+}
+
+[name="name"],
+[name="mail"] {
+  border-radius: 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  height: 3.5vh;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-align: center;
+}
+
+#formflow_3 col {
+  background-color: var(--black-lighter);
+}
+
+/* -------------------------------- */
+
+/*---- Booking ALL DISPLAY NONE ----*/
+.spots_left {
+  display: none;
+}
+
+#timer {
+  display: none;
+}
+
+#formflow_2 {
+  display: none;
+}
+
+#formflow_3 {
+  display: none;
 }
 /* -------------------------------- */
 
@@ -185,13 +379,13 @@ article {
 }
 
 #artists button {
-  border: 2px solid var(--purple);
-  background-color: var(--transparent);
+  border: none;
+  background-color: var(--purple);
+  color: var(--white);
   padding: 0.5rem 1rem;
 }
 
 #artists button:hover {
-  border: 2px solid var(--purple-hover);
   background-color: var(--purple-hover);
 }
 
@@ -230,7 +424,6 @@ footer {
   #artists h2 {
     font-size: 3.5rem;
     text-align: center;
-    margin-bottom: 2rem;
   }
 
   #artists h3 {
@@ -253,6 +446,26 @@ footer {
 
   .frontpage_logo {
     width: 30%;
+  }
+
+  /* Form flow 2 */
+  .ticket_type,
+  .optionals {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  #formflow_1,
+  #formflow_2 {
+    margin-bottom: 5rem;
+  }
+
+  /* Timer */
+  #timer {
+    bottom: 780px;
   }
 
   /* Artists */
@@ -318,6 +531,24 @@ footer {
     font-size: 1.4rem;
   }
 
+  .button_outline {
+    font-size: 1.2rem;
+  }
+
+  #booking h3 {
+    font-size: 2rem;
+  }
+
+  #booking h4,
+  #booking h5 {
+    font-size: 1.5rem;
+  }
+
+  p,
+  label {
+    font-size: 0.9rem;
+  }
+
   h6 {
     font-size: 1.2rem;
   }
@@ -350,7 +581,109 @@ footer {
 
   /* Booking */
   #booking {
-    padding: 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding: 5rem 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  #formflow_1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #booking h2 {
+    text-align: end;
+  }
+
+  #booking h3 {
+    text-align: start;
+  }
+
+  .col {
+    padding: 2rem 2rem;
+    width: 100%;
+  }
+
+  /* Form flow 1 */
+  #formflow_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-right: 4rem;
+  }
+
+  #formflow_1 .number_input {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #formflow_1 .dropdown {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .spots_left {
+    text-align: center;
+  }
+
+  .button_wrapper {
+    text-align: end;
+  }
+
+  .area_dropdown,
+  #people-spots {
+    height: 4vh;
+    width: 100%;
+    text-align: start;
+    padding-left: 0.5rem;
+  }
+
+  .spots_left {
+    margin: 0;
+  }
+
+  .spots_left_wrapper {
+    text-align: end;
+  }
+
+  /* Form flow 2 */
+  .ticket_type,
+  .optionals {
+    justify-content: start;
+  }
+
+  #formflow_2 {
+    margin-bottom: 0rem;
+    margin-right: 4rem;
+  }
+
+  /* Form flow 3 */
+  #formflow_3 {
+    text-align: start;
+  }
+
+  .total {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  [name="name"],
+  [name="mail"] {
+    text-align: start;
+    padding-left: 0.5rem;
+  }
+
+  .your_ticket,
+  .guest_ticket {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Timer */
+  #timer {
+    bottom: 460px;
   }
 
   /* Artists */
