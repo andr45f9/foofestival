@@ -74,12 +74,14 @@ a {
 }
 
 #booking h2,
-#artists h2 {
+#artists h2,
+#basket h2 {
   font-size: 3rem;
   text-align: center;
 }
 
-#booking h2 {
+#booking h2,
+#basket h2 {
   margin-bottom: 2rem;
 }
 
@@ -96,13 +98,19 @@ a {
   margin-bottom: 0.5rem;
 }
 
-#booking h4 {
+#booking h4,
+#basket h4 {
   color: var(--purple);
 }
 
 #booking h4,
-#booking h5 {
+#booking h5,
+#basket h5 {
   font-size: 1.3rem;
+}
+
+#basket h4 {
+  font-size: 1.7rem;
 }
 
 #booking h4,
@@ -202,7 +210,8 @@ li:hover {
 /* -------------------------------- */
 
 /*---- Booking ----*/
-#booking {
+#booking,
+#basket {
   padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
@@ -294,6 +303,11 @@ li:hover {
   margin-top: 2rem;
 }
 
+#clear_button,
+#goback_button {
+  margin-right: 1rem;
+}
+
 /* Form flow 3 */
 .total {
   display: flex;
@@ -328,7 +342,41 @@ li:hover {
 
 /* -------------------------------- */
 
-/*---- Booking ALL DISPLAY NONE ----*/
+/*---- Basket ----*/
+
+#basket input {
+  border-radius: 0;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  color: var(--white-faded);
+  height: 3.5vh;
+  width: 100%;
+  cursor: pointer;
+}
+
+.credit_card_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.credit_card_form input {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.complete_message {
+  margin-bottom: 2rem;
+}
+
+.row input {
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------- */
+
+/*---- ALL DISPLAY NONE ----*/
 .spots_left {
   display: none;
 }
@@ -342,6 +390,14 @@ li:hover {
 }
 
 #formflow_3 {
+  display: none;
+}
+
+#basket {
+  display: none;
+}
+
+.complete_message {
   display: none;
 }
 /* -------------------------------- */
@@ -421,7 +477,8 @@ footer {
 @media screen and (min-width: 768px) {
   /* Fonts */
   #booking h2,
-  #artists h2 {
+  #artists h2,
+  #basket h2 {
     font-size: 3.5rem;
     text-align: center;
   }
@@ -468,6 +525,11 @@ footer {
     bottom: 780px;
   }
 
+  /* Basket */
+  #basket {
+    padding: 4rem 4rem;
+  }
+
   /* Artists */
   #all_artists {
     display: grid;
@@ -509,13 +571,15 @@ footer {
   }
 
   #booking h2,
-  #artists h2 {
+  #artists h2,
+  #basket h2 {
     font-size: 4.5rem;
     text-align: center;
     margin-bottom: 4rem;
   }
 
-  #booking h2 {
+  #booking h2,
+  #basket h2 {
     text-align: end;
   }
 
@@ -535,13 +599,19 @@ footer {
     font-size: 1.2rem;
   }
 
-  #booking h3 {
+  #booking h3,
+  #basket h3 {
     font-size: 2rem;
   }
 
   #booking h4,
-  #booking h5 {
+  #booking h5,
+  #basket h5 {
     font-size: 1.5rem;
+  }
+
+  #basket h4 {
+    font-size: 2.5rem;
   }
 
   p,
@@ -592,10 +662,6 @@ footer {
   #formflow_1 {
     grid-column: 1/2;
     grid-row: 1/2;
-  }
-
-  #booking h2 {
-    text-align: end;
   }
 
   #booking h3 {
@@ -684,6 +750,58 @@ footer {
   /* Timer */
   #timer {
     bottom: 460px;
+  }
+
+  /* Basket */
+  #basket {
+    padding: 5rem 4rem;
+  }
+
+  #basket input {
+    width: 50%;
+    height: 4vh;
+  }
+
+  #basket .total {
+    max-height: 20%;
+    margin: 0;
+  }
+
+  #formflow_4 {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .credit_card_form {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #basket .total {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .complete_message {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  #basket .button_wrapper {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
   }
 
   /* Artists */

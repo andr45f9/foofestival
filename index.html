@@ -17,6 +17,7 @@
 
     <!-- Link til min CSS -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
   </head>
   <body>
     <header>
@@ -64,7 +65,7 @@
             <h3>2. Choose amount of people</h3>
             <input type="number" name="people-spots" id="people-spots" min="0" required />
             <div class="button_wrapper">
-              <button class="button_outline" id="reserve">Reserve spots</button>
+              <button class="button_outline" id="reserve_button" type="button">Reserve spots</button>
             </div>
           </div>
         </form>
@@ -72,7 +73,7 @@
         <div id="timer">
           <div class="circle">
             <h5>Timer</h5>
-            <p>05:00</p>
+            <p class="display_timer"></p>
           </div>
         </div>
 
@@ -116,7 +117,7 @@
             </div>
           </div>
           <div class="button_wrapper">
-            <button class="button_outline" id="next">Next Step</button>
+            <button class="button_outline" id="next_button" type="button">Next Step</button>
           </div>
         </form>
 
@@ -130,27 +131,70 @@
             <div class="your_ticket">
               <h4>Your ticket</h4>
               <label for="name">NAME</label>
-              <input type="text" name="name" id="name" value="name" placeholder="Type in first name" />
+              <input type="text" name="name" id="name" placeholder="Type in first name" />
               <br />
               <label for="mail">MAIL</label>
-              <input type="text" name="mail" id="mail" value="mail" placeholder="Type in E-mail" />
+              <input type="text" name="mail" id="mail" placeholder="Type in E-mail" />
             </div>
             <div class="guest_ticket">
               <h4>Guest ticket</h4>
               <label for="name">NAME</label>
-              <input type="text" name="name" id="name" value="name" placeholder="Type in first name" />
+              <input type="text" name="name" id="name" placeholder="Type in first name" />
               <br />
               <label for="mail">MAIL</label>
-              <input type="text" name="mail" id="mail" value="mail" placeholder="Type in E-mail" />
+              <input type="text" name="mail" id="mail" placeholder="Type in E-mail" />
             </div>
           </div>
 
           <div class="button_wrapper">
-            <button class="button_outline" id="checkout">Check Out</button>
+            <button class="button_outline" id="clear_button" type="button">Clear Order</button>
+            <button class="button_outline" id="checkout_button" type="button">Check Out</button>
           </div>
         </form>
+      </section>
 
-        <form id="formflow_4"></form>
+      <section id="basket">
+        <h2>You are almost there</h2>
+        <form id="formflow_4">
+          <div class="col credit_card_form">
+            <label for="cname">CARDHOLDERS NAME</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe" />
+
+            <label for="ccnum">CREDIT CARD NUMBER</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" />
+
+            <div class="row">
+              <div>
+                <label for="expmonth">EXPIRY MONTH</label>
+                <br />
+                <input type="text" id="expmonth" name="expmonth" placeholder="September" />
+              </div>
+
+              <div>
+                <label for="expyear">EXPIRY YEAR</label>
+                <br />
+                <input type="text" id="expyear" name="expyear" placeholder="2018" />
+              </div>
+
+              <div>
+                <label for="cvv">CVV</label>
+                <br />
+                <input type="text" id="cvv" name="cvv" placeholder="352" />
+              </div>
+            </div>
+          </div>
+          <div class="col total">
+            <h3>TOTAL</h3>
+            <h5 class="price_amount">1996,-</h5>
+          </div>
+          <div class="complete_message">
+            <h4>Order Complete ✓</h4>
+          </div>
+          <div class="button_wrapper">
+            <button class="button_outline" id="goback_button" type="button">Go Back</button>
+            <button class="button_outline" id="buynow_button" type="button">Buy Now</button>
+          </div>
+        </form>
       </section>
 
       <section id="artists">
@@ -193,6 +237,7 @@
         </svg>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="booking.js"></script>
+    <script src="artist.js"></script>
   </body>
 </html>

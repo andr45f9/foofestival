@@ -12,7 +12,7 @@ async function getData() {
   const json = await resspons.json();
 
   data = json;
-  console.log("data", data);
+  /*   console.log("data", data); */
 
   cleanData(data);
 }

@@ -1,0 +1,48 @@
+/* Animations for the form flow */
+
+.left_animation {
+  animation-name: fadeInLeft;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.right_animation {
+  animation-name: fadeInRight;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+}
+@keyframes fadeInRight {
+  from {
+    transform: translateX(200px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.scale_animation {
+  animation-name: scaleUp;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
