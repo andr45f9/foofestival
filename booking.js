@@ -9,6 +9,9 @@ function init() {
 }
 
 function addingEventListeners() {
+  document.querySelectorAll('[id="area"]').forEach((option) => option.addEventListener("click", selectCampingArea));
+  document.querySelectorAll('[id="people-spots"]').forEach((option) => option.addEventListener("click", selectPeopleAmount));
+
   //ALL BUTTON CLICKS for the booking system
   document.querySelector("#reserve_button").addEventListener("click", formFlow2);
   document.querySelector("#next_button").addEventListener("click", formFlow3);
@@ -24,23 +27,21 @@ async function getSpotsData() {
 
   spotsData = json;
   console.log("data", spotsData);
-
-  formFlow1(spotsData);
 }
 
-function formFlow1(spotsData) {
-  let campArea = document.querySelectorAll("option").value;
-  console.log("area chosen:", campArea);
+function selectCampingArea() {
+  const campingArea = document.querySelector('[id="area"]').value;
 
-  /*  campArea.forEach((campAreaChoice) => {
-    campArea = campAreaChoice.value;
-
-    console.log("area chosen:", campArea);
-  }); */
-
-  const ticketAmount = document.querySelector('[id="people-spots"]').value;
-  console.log("ticket amount:", ticketAmount);
+  console.log("chosen area:", campingArea);
 }
+
+function selectPeopleAmount() {
+  const peopleAmount = document.querySelector('[id="people-spots"]').value;
+
+  console.log("ticket amount:", peopleAmount);
+}
+
+/*---- Adding and removing html elemnts on button click for the form flow ----*/
 
 function formFlow2() {
   const flow2 = document.querySelector("#formflow_2");
