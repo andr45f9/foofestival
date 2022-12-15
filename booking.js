@@ -1,15 +1,23 @@
 const spotsUrl = "http://localhost:8080/available-spots";
 let spotsData;
 
+const putSpots = {
+  area: "",
+  amount: "",
+};
+
+console.log(putSpots);
+
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
   getSpotsData();
   addingEventListeners();
+  newOption();
 }
 
 function addingEventListeners() {
-  document.querySelectorAll('[id="area"]').forEach((option) => option.addEventListener("click", selectCampingArea));
+  document.querySelector('[id="areas"]').addEventListener("click", selectCampingArea);
   document.querySelectorAll('[id="people-spots"]').forEach((option) => option.addEventListener("click", selectPeopleAmount));
 
   //ALL BUTTON CLICKS for the booking system
@@ -29,16 +37,47 @@ async function getSpotsData() {
   console.log("data", spotsData);
 }
 
-function selectCampingArea() {
-  const campingArea = document.querySelector('[id="area"]').value;
+async function newOption() {
+  const resspons = await fetch(spotsUrl);
+  const data = await resspons.json();
 
-  console.log("chosen area:", campingArea);
+  let areaSelect = document.querySelector("#areas");
+  for (let i = 0; i < data.length; i++) {
+    let areaOption = document.createElement("option");
+    areaOption.innerHTML = data[i]["area"] + " - Spots " + data[i]["spots"];
+    areaOption.value = data[i]["area"];
+    areaOption.id = "area";
+    areaSelect.appendChild(areaOption);
+  }
+}
+
+function selectCampingArea() {
+  const e = document.querySelector(".area_dropdown");
+  putSpots.area = e.options[e.selectedIndex].value;
+
+  console.log("chosen area:", putSpots.area);
 }
 
 function selectPeopleAmount() {
-  const peopleAmount = document.querySelector('[id="people-spots"]').value;
+  putSpots.amount = document.querySelector('[id="people-spots"]').value;
 
-  console.log("ticket amount:", peopleAmount);
+  console.log("ticket amount:", putSpots.amount);
+}
+
+function putReservation() {
+  /* If statement that only allows you to put a reservation if 
+  the amount of people is either equal or less than the available spots  */
+
+  const reserve = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(putSpots),
+  };
+
+  fetch("http://localhost:8080/reserve-spot", reserve)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
 }
 
 /*---- Adding and removing html elemnts on button click for the form flow ----*/
@@ -53,6 +92,7 @@ function formFlow2() {
   showTimer.className = "scale_animation";
 
   startTimer();
+  putReservation();
 }
 
 function startTimer(duration, display) {

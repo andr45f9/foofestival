@@ -49,13 +49,8 @@
         <form id="formflow_1">
           <div class="dropdown">
             <h3>1. Choose camping area</h3>
-            <select class="area_dropdown" required>
-              <option name="area" id="area" value="" disabled selected>Choose camping area</option>
-              <option name="area" id="area" value="svartheim">Svartheim</option>
-              <option name="area" id="area" value="nilfheim">Nilfheim</option>
-              <option name="area" id="area" value="helheim">Helheim</option>
-              <option name="area" id="area" value="muspelheim">Muspelheim</option>
-              <option name="area" id="area" value="alfheim">Alfheim</option>
+            <select class="area_dropdown" id="areas" required>
+              <option disabled selected>Select area here</option>
             </select>
             <div class="spots_left_wrapper">
               <p class="spots_left">45 spots left</p>
@@ -237,7 +232,8 @@
         </svg>
       </div>
     </footer>
-    <script src="booking.js"></script>
-    <script src="artist.js"></script>
+    <script defer src="booking.js"></script>
+    <script defer src="artist.js"></script>
+    <!-- <script defer src="send.js"></script> -->
   </body>
 </html>
