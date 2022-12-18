@@ -21,6 +21,7 @@ body {
   --black: #000000;
   --black-light: #131313;
   --black-lighter: #1b1b1b;
+  --grey: #6f6f6f;
 }
 /* -------------------------------- */
 
@@ -140,7 +141,8 @@ a {
 }
 
 #artists button,
-.button_outline {
+.button_outline,
+.button_outline_after {
   font-family: "Bebas Neue", cursive;
   font-size: 1.1rem;
 }
@@ -220,13 +222,21 @@ li:hover {
 }
 
 .button_outline {
+  border: 2px solid var(--grey);
+  background-color: var(--transparent);
+  padding: 0.5rem 2rem;
+  color: var(--grey);
+}
+
+.button_outline_after {
   border: 2px solid var(--purple);
   background-color: var(--transparent);
   padding: 0.5rem 2rem;
   color: var(--white);
+  cursor: pointer;
 }
 
-.button_outline:hover {
+.button_outline_after:hover {
   border: 2px solid var(--purple-hover);
   background-color: var(--purple-hover);
 }
@@ -271,11 +281,6 @@ li:hover {
   height: 3.5vh;
   width: 100%;
   cursor: pointer;
-  margin-bottom: 2rem;
-}
-
-.spots_left {
-  background-color: var(--purple-hover);
   margin-bottom: 2rem;
 }
 
@@ -377,9 +382,6 @@ li:hover {
 /* -------------------------------- */
 
 /*---- ALL DISPLAY NONE ----*/
-.spots_left {
-  display: none;
-}
 
 #timer {
   display: none;
@@ -400,6 +402,11 @@ li:hover {
 .complete_message {
   display: none;
 }
+
+.guest_ticket {
+  display: none;
+}
+
 /* -------------------------------- */
 
 /*---- Artists ----*/
@@ -599,6 +606,10 @@ footer {
     font-size: 1.2rem;
   }
 
+  .button_outline_after {
+    font-size: 1.2rem;
+  }
+
   #booking h3,
   #basket h3 {
     font-size: 2rem;
@@ -691,10 +702,6 @@ footer {
     grid-row: 1/2;
   }
 
-  .spots_left {
-    text-align: center;
-  }
-
   .button_wrapper {
     text-align: end;
   }
@@ -705,14 +712,6 @@ footer {
     width: 100%;
     text-align: start;
     padding-left: 0.5rem;
-  }
-
-  .spots_left {
-    margin: 0;
-  }
-
-  .spots_left_wrapper {
-    text-align: end;
   }
 
   /* Form flow 2 */

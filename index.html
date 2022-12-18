@@ -52,9 +52,6 @@
             <select class="area_dropdown" id="areas" required>
               <option disabled selected>Select area here</option>
             </select>
-            <div class="spots_left_wrapper">
-              <p class="spots_left">45 spots left</p>
-            </div>
           </div>
           <div class="number_input">
             <h3>2. Choose amount of people</h3>
@@ -126,23 +123,24 @@
             <div class="your_ticket">
               <h4>Your ticket</h4>
               <label for="name">NAME</label>
-              <input type="text" name="name" id="name" placeholder="Type in first name" />
+              <input type="text" name="name" id="user-name" placeholder="Type in first name" />
               <br />
               <label for="mail">MAIL</label>
-              <input type="text" name="mail" id="mail" placeholder="Type in E-mail" />
+              <input type="text" name="mail" id="user-mail" placeholder="Type in E-mail" />
             </div>
             <div class="guest_ticket">
               <h4>Guest ticket</h4>
               <label for="name">NAME</label>
-              <input type="text" name="name" id="name" placeholder="Type in first name" />
+              <input type="text" name="name" id="guest-name" placeholder="Type in first name" />
               <br />
               <label for="mail">MAIL</label>
-              <input type="text" name="mail" id="mail" placeholder="Type in E-mail" />
+              <input type="text" name="mail" id="guest-mail" placeholder="Type in E-mail" />
             </div>
+            <div class="new_guest_tickets"></div>
           </div>
 
           <div class="button_wrapper">
-            <button class="button_outline" id="clear_button" type="button">Clear Order</button>
+            <button class="button_outline_after" id="clear_button" type="button">Clear Order</button>
             <button class="button_outline" id="checkout_button" type="button">Check Out</button>
           </div>
         </form>
@@ -156,25 +154,25 @@
             <input type="text" id="cname" name="cardname" placeholder="John More Doe" />
 
             <label for="ccnum">CREDIT CARD NUMBER</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" />
+            <input type="text" inputmode="numeric" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444" />
 
             <div class="row">
               <div>
                 <label for="expmonth">EXPIRY MONTH</label>
                 <br />
-                <input type="text" id="expmonth" name="expmonth" placeholder="September" />
+                <input type="text" inputmode="numeric" id="expmonth" name="expmonth" placeholder="September" />
               </div>
 
               <div>
                 <label for="expyear">EXPIRY YEAR</label>
                 <br />
-                <input type="text" id="expyear" name="expyear" placeholder="2018" />
+                <input type="text" inputmode="numeric" id="expyear" name="expyear" placeholder="2018" />
               </div>
 
               <div>
                 <label for="cvv">CVV</label>
                 <br />
-                <input type="text" id="cvv" name="cvv" placeholder="352" />
+                <input type="text" inputmode="numeric" id="cvv" name="cvv" placeholder="352" />
               </div>
             </div>
           </div>
@@ -186,8 +184,8 @@
             <h4>Order Complete ✓</h4>
           </div>
           <div class="button_wrapper">
-            <button class="button_outline" id="goback_button" type="button">Go Back</button>
-            <button class="button_outline" id="buynow_button" type="button">Buy Now</button>
+            <button class="button_outline_after" id="goback_button" type="button">Go Back</button>
+            <button class="button_outline_after" id="buynow_button" type="button">Buy Now</button>
           </div>
         </form>
       </section>
@@ -234,6 +232,6 @@
     </footer>
     <script defer src="booking.js"></script>
     <script defer src="artist.js"></script>
-    <!-- <script defer src="send.js"></script> -->
+    <script defer src="formSettings.js"></script>
   </body>
 </html>
