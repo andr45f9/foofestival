@@ -72,7 +72,7 @@ async function newOption() {
 
   console.log("data", data);
 
-  let areaSelect = document.querySelector("#areas");
+  const areaSelect = document.querySelector("#areas");
   for (let i = 0; i < data.length; i++) {
     let areaOption = document.createElement("option");
     areaOption.innerHTML = data[i]["area"] + "  (Spots left: " + data[i]["available"] + ")";
@@ -199,9 +199,6 @@ async function saveOrderInformation() {
     },
     body: JSON.stringify(fullOrder),
   });
-  /*     .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch((err) => console.error(err)); */
 
   return await res.json();
 }
