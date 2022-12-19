@@ -51,7 +51,13 @@ function addingEventListeners() {
   document.querySelectorAll('[id="guest-mail"]').forEach((option) => option.addEventListener("input", selectTicketHolderName));
 
   //ALL BUTTON CLICKS for the booking system
+  document.querySelector("#reserve_button").disabled = true;
+  document.querySelector("#reserve_button").addEventListener("click", formFlow2);
+
+  document.querySelector("#next_button").disabled = true;
   document.querySelector("#next_button").addEventListener("click", formFlow3);
+
+  document.querySelector("#checkout_button").disabled = true;
   document.querySelector("#checkout_button").addEventListener("click", formFlow4);
   document.querySelector("#clear_button").addEventListener("click", resetOrder);
   document.querySelector("#goback_button").addEventListener("click", goToHomePage);
@@ -98,7 +104,7 @@ function selectPeopleAmount() {
   //if else statement for controlling when the reserve button should be clickable
   if (fullOrder.amount >= 1) {
     document.querySelector("#reserve_button").className = "button_outline_after";
-    document.querySelector("#reserve_button").addEventListener("click", formFlow2);
+    document.querySelector("#reserve_button").disabled = false;
   } else {
     document.querySelector("#reserve_button").className = "button_outline";
   }
@@ -114,10 +120,13 @@ function selectOptions() {
   //if else statement for controlling when the next button should be clickable
   if (fullOrder.regTicket === fullOrder.amount && fullOrder.vipTicket === "0") {
     document.querySelector("#next_button").className = "button_outline_after";
+    document.querySelector("#next_button").disabled = false;
   } else if (fullOrder.vipTicket === fullOrder.amount && fullOrder.regTicket === "0") {
     document.querySelector("#next_button").className = "button_outline_after";
+    document.querySelector("#next_button").disabled = false;
   } else if (fullOrder.vipTicket + fullOrder.regTicket === fullOrder.amount) {
     document.querySelector("#next_button").className = "button_outline_after";
+    document.querySelector("#next_button").disabled = false;
   } else {
     document.querySelector("#next_button").className = "button_outline";
   }
@@ -132,6 +141,7 @@ function selectTicketHolderName() {
 
   if (fullOrder.userName === fullOrder.userName) {
     document.querySelector("#checkout_button").className = "button_outline_after";
+    document.querySelector("#checkout_button").disabled = false;
   } else {
     document.querySelector("#reserve_button").className = "button_outline";
   }
