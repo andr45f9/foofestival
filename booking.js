@@ -102,11 +102,12 @@ function selectPeopleAmount() {
   }
 
   //if else statement for controlling when the reserve button should be clickable
-  if (fullOrder.amount >= 1) {
+  if (Number(fullOrder.amount) >= 1) {
     document.querySelector("#reserve_button").className = "button_outline_after";
     document.querySelector("#reserve_button").disabled = false;
   } else {
     document.querySelector("#reserve_button").className = "button_outline";
+    document.querySelector("#reserve_button").disabled = true;
   }
 }
 
@@ -124,12 +125,26 @@ function selectOptions() {
   } else if (fullOrder.vipTicket === fullOrder.amount && fullOrder.regTicket === "0") {
     document.querySelector("#next_button").className = "button_outline_after";
     document.querySelector("#next_button").disabled = false;
-  } else if (fullOrder.vipTicket + fullOrder.regTicket === fullOrder.amount) {
+  } else if (Number(fullOrder.vipTicket) + Number(fullOrder.regTicket) === Number(fullOrder.amount)) {
     document.querySelector("#next_button").className = "button_outline_after";
     document.querySelector("#next_button").disabled = false;
   } else {
     document.querySelector("#next_button").className = "button_outline";
   }
+
+  //Calculating the full price of camping area and tickets
+  const total = document.querySelector(".price_amount");
+  const totalBasket = document.querySelector("#card_amount");
+
+  const bookingFee = 99;
+  let regTicketPrice = fullOrder.regTicket;
+  let vipTicketPrice = fullOrder.vipTicket;
+  let greenCampPrice = fullOrder.greenCamp;
+  let twoCampPrice = fullOrder.twoPeopleCamp;
+  let threeCampPrice = fullOrder.threePeopleCamp;
+
+  total.innerHTML = bookingFee + parseFloat(regTicketPrice * 799) + parseFloat(vipTicketPrice * 1299) + parseFloat(greenCampPrice * 249) + parseFloat(twoCampPrice * 299) + parseFloat(threeCampPrice * 399) + " ,-";
+  totalBasket.innerHTML = bookingFee + parseFloat(regTicketPrice * 799) + parseFloat(vipTicketPrice * 1299) + parseFloat(greenCampPrice * 249) + parseFloat(twoCampPrice * 299) + parseFloat(threeCampPrice * 399) + " ,-";
 }
 
 function selectTicketHolderName() {

@@ -49,15 +49,15 @@
       <section id="booking">
         <h2>Get your ticket</h2>
         <form id="formflow_1">
+          <div class="number_input">
+            <h3>1. Choose amount of people</h3>
+            <input type="number" name="people-spots" id="people-spots" min="0" required />
+          </div>
           <div class="dropdown">
-            <h3>1. Choose camping area</h3>
+            <h3>2. Choose camping area</h3>
             <select class="area_dropdown" id="areas" required>
               <option disabled selected>Select area here</option>
             </select>
-          </div>
-          <div class="number_input">
-            <h3>2. Choose amount of people</h3>
-            <input type="number" name="people-spots" id="people-spots" min="0" required />
             <div class="button_wrapper">
               <button class="button_outline" id="reserve_button" type="button">Reserve spots</button>
             </div>
@@ -118,7 +118,7 @@
         <form id="formflow_3">
           <div class="col total">
             <h3>TOTAL</h3>
-            <h5 class="price_amount">1996,-</h5>
+            <h5 class="price_amount"></h5>
           </div>
           <h3>5. Fill in personal information</h3>
           <div class="col">
@@ -180,7 +180,7 @@
           </div>
           <div class="col total">
             <h3>TOTAL</h3>
-            <h5 class="price_amount">1996,-</h5>
+            <h5 class="price_amount" id="card_amount"></h5>
           </div>
           <div class="complete_message">
             <h4>Order Complete ✓</h4>
